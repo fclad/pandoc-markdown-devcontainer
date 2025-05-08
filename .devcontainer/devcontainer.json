@@ -1,0 +1,18 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "initializeCommand": "git config -l --global --include > .gitconfig.global || echo \"\" > .gitconfig.global",
+  "postCreateCommand": "npm install -g @devcontainers/cli",
+  "postAttachCommand": "/bin/bash .devcontainer/post-attach.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.vscode-github-actions",
+        "ms-vscode.makefile-tools",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
