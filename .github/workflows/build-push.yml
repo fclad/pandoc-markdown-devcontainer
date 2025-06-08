@@ -24,6 +24,8 @@ jobs:
       - name: Setup Docker buildx for multi-architecture builds
         uses: docker/setup-buildx-action@v3
         with:
+          platforms: linux/amd64,linux/arm64
+          install: true
           use: true
 
       - name: Login to GitHub Container Registry
@@ -40,4 +42,4 @@ jobs:
           imageName: ghcr.io/${{ github.repository }}
           cacheFrom: ghcr.io/${{ github.repository }}
           push: always
-          platform: linux/amd64,linux/arm64/v8
+          platform: linux/amd64,linux/arm64
