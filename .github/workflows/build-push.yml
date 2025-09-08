@@ -24,7 +24,7 @@ jobs:
       - name: Setup Docker buildx for multi-architecture builds
         uses: docker/setup-buildx-action@v3
         with:
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           install: true
           use: true
 
@@ -42,4 +42,4 @@ jobs:
           imageName: ghcr.io/${{ github.repository }}
           cacheFrom: ghcr.io/${{ github.repository }}
           push: always
-          platform: linux/amd64,linux/arm64
+          platform: linux/amd64
